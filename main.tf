@@ -1,10 +1,8 @@
-resource "aws_vpc" "dev" {
-    cidr_block = "10.0.0.0/16"
-    tags = {
-        Name = "my-vpc"
-    }
-  
-}
+resource "aws_instance" "test" {
+  ami           = "ami-0f5ee92e2d63afc18"
+  instance_type = "t2.micro"
 
-## Here VPC coud reference name is my-vpc
-## resource local reference name is dev
+  tags = {
+    Name = "Test-EC2"
+  }
+}
